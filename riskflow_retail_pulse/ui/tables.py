@@ -7,6 +7,7 @@ o st.table, aplicando colores y etiquetas en español.
 
 import pandas as pd
 from typing import Dict, List
+from pandas.io.formats.style import Styler
 
 from core.models import Device, State
 
@@ -68,7 +69,7 @@ def build_status_table(
     return df
 
 
-def style_status_table(df: pd.DataFrame) -> pd.io.formats.style.Styler:
+def style_status_table(df: pd.DataFrame) -> Styler:
     """Aplica colores a la columna Estado en el DataFrame."""
     return df.style.map(_color_state, subset=["Estado"])
 
