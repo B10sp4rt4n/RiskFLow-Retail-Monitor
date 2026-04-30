@@ -1,0 +1,113 @@
+# devices.yaml – Configuración de cliente, sucursales y endpoints
+# Edita este archivo para agregar o quitar sucursales y dispositivos.
+
+client: "Retail Demo S.A."
+
+branches:
+  - id: "SUC001"
+    name: "Sucursal Centro"
+    location: "Ciudad de México"
+    endpoints:
+      - id: "SUC001-POS-01"
+        name: "POS Caja 1"
+        device_type: "POS"
+        ip: "192.168.1.10"
+        port: 9100
+        criticality: "high"       # high | medium | low
+        validation_method: "socket" # ping | socket | snmp
+
+      - id: "SUC001-POS-02"
+        name: "POS Caja 2"
+        device_type: "POS"
+        ip: "192.168.1.11"
+        port: 9100
+        criticality: "high"
+        validation_method: "socket"
+
+      - id: "SUC001-PRN-01"
+        name: "Impresora Fiscal 1"
+        device_type: "Printer"
+        ip: "192.168.1.20"
+        port: 9100
+        criticality: "medium"
+        validation_method: "ping"
+
+      - id: "SUC001-RTR-01"
+        name: "Router Principal"
+        device_type: "Router"
+        ip: "192.168.1.1"
+        port: 161
+        criticality: "high"
+        validation_method: "snmp"
+
+  - id: "SUC002"
+    name: "Sucursal Norte"
+    location: "Monterrey"
+    endpoints:
+      - id: "SUC002-POS-01"
+        name: "POS Caja 1"
+        device_type: "POS"
+        ip: "10.10.2.10"
+        port: 9100
+        criticality: "high"
+        validation_method: "socket"
+
+      - id: "SUC002-PRN-01"
+        name: "Impresora Fiscal 1"
+        device_type: "Printer"
+        ip: "10.10.2.20"
+        port: 9100
+        criticality: "medium"
+        validation_method: "ping"
+
+      - id: "SUC002-SCN-01"
+        name: "Escáner de Código de Barras"
+        device_type: "Scanner"
+        ip: "10.10.2.30"
+        port: 5000
+        criticality: "low"
+        validation_method: "ping"
+
+  - id: "SUC003"
+    name: "Sucursal Sur"
+    location: "Guadalajara"
+    endpoints:
+      - id: "SUC003-POS-01"
+        name: "POS Caja 1"
+        device_type: "POS"
+        ip: "172.16.3.10"
+        port: 9100
+        criticality: "high"
+        validation_method: "socket"
+
+      - id: "SUC003-POS-02"
+        name: "POS Caja 2"
+        device_type: "POS"
+        ip: "172.16.3.11"
+        port: 9100
+        criticality: "high"
+        validation_method: "socket"
+
+      - id: "SUC003-PRN-01"
+        name: "Impresora Fiscal 1"
+        device_type: "Printer"
+        ip: "172.16.3.20"
+        port: 9100
+        criticality: "medium"
+        validation_method: "ping"
+
+      - id: "SUC003-RTR-01"
+        name: "Router Principal"
+        device_type: "Router"
+        ip: "172.16.3.1"
+        port: 161
+        criticality: "high"
+        validation_method: "snmp"
+
+      - id: "SUC003-SCN-01"
+        name: "Escáner 1"
+        device_type: "Scanner"
+        ip: "172.16.3.30"
+        port: 5000
+        criticality: "low"
+        validation_method: "ping"
