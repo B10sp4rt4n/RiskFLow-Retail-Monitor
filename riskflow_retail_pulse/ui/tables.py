@@ -70,7 +70,7 @@ def build_status_table(
 
 def style_status_table(df: pd.DataFrame) -> pd.io.formats.style.Styler:
     """Aplica colores a la columna Estado en el DataFrame."""
-    return df.style.applymap(_color_state, subset=["Estado"])
+    return df.style.map(_color_state, subset=["Estado"])
 
 
 # ---------------------------------------------------------------------------

@@ -9,6 +9,7 @@ El archivo SQLite se guarda en el directorio de trabajo.
 El nombre del archivo puede configurarse con DB_PATH.
 """
 
+import os
 import sqlite3
 from datetime import datetime
 from pathlib import Path
@@ -16,8 +17,13 @@ from typing import Dict, List, Optional
 
 from core.models import EndpointStatus, Event
 
-# Ruta por defecto de la base de datos (junto al proyecto)
-DB_PATH = Path(__file__).parent / "riskflow_data.db"
+# Ruta de la base de datos.  Puede sobreescribirse con la variable de entorno
+# RISKFLOW_DB_PATH, lo que facilita despliegues en distintos entornos.
+_default_db = Path(os.environ.get(
+    "RISKFLOW_DB_PATH",
+    str(Path(__file__).parent / "riskflow_data.db")
+))
+DB_PATH: Path = _default_db
 
 
 # ---------------------------------------------------------------------------

@@ -5,7 +5,7 @@ Define las entidades clave que circulan entre los módulos:
   - Device         : configuración estática de un endpoint.
   - EndpointStatus : snapshot de estado en un momento dado.
   - Event          : registro de cambio de estado.
-  - SiteStatus     : resumen de disponibilidad de una sucursal.
+  - SiteAvailability: resumen de disponibilidad de una sucursal.
 """
 
 from dataclasses import dataclass, field
